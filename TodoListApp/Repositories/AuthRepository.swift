@@ -20,4 +20,5 @@ class AuthRepository {
     func register(email: String, password: String) async throws -> AuthDataResult {
         try await Auth.auth().createUser(withEmail: email, password: password)
     }
+    
 }

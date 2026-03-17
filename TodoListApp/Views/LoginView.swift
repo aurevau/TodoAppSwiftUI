@@ -41,8 +41,6 @@ struct LoginView: View {
                     Text("New around here?")
                  
                         NavigationLink("Create an Account", destination: RegisterView())
-                        
-                    
                     .padding(.bottom, 50)
                 }
             }

@@ -17,29 +17,33 @@ class RegisterViewModel: ObservableObject {
     @Published var confirmPassword = ""
     @Published var errorMessage = ""
     
-    private let repo = AuthRepository()
+    private let authRepo = AuthRepository()
+    private let userRepo = UserRepository()
 
     
     init() {}
     
     func register() {
-        
         guard validate() else {
             return 
         }
         
         Task {
             do{
-                let result = try await repo.register(email: email, password: password)
-                print(result.user.uid)
-        
+                let result = try await authRepo.register(email: email, password: password)
+                let userId = result.user.uid
                 
+                print(userId)
+                try await userRepo.saveUserToFirebase(id: userId, name: name, email: email)
+        
+                print("Registration complete and user saved!")
+
             } catch {
                 errorMessage = error.localizedDescription
             }
         }
         
-        // Save user to firebase datastore as well...
+       
     }
     
     
@@ -53,6 +57,11 @@ class RegisterViewModel: ObservableObject {
             errorMessage = "Please fill in all fields."
             return false
             
+        }
+        
+        guard password.count >= 6 else {
+            errorMessage = "Please enter a password of min 6 characters"
+            return false 
         }
         
         guard email.contains("@") && email.contains(".") else {
