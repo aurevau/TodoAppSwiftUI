@@ -17,32 +17,37 @@ MyToDoApp/
 ├─ Models/
 │   ├─ User.swift
 │   └─ Todo.swift
+│
 ├─ Other/
-│   └─ Extenstions.swift
-│   └─ TodoListAppApp.swift
+│   ├─ Extensions.swift
+│   ├─ TodoListAppApp.swift
 │   └─ Assets
+│
 ├─ Repositories/
 │   ├─ UserRepository.swift
-│   └─ TodoRepository.swift
+│   ├─ TodoRepository.swift
 │   └─ AuthRepository.swift
+│
 ├─ ViewModels/
 │   ├─ LoginViewModel.swift
-│   └─ MainViewModel.swift
-│   └─ NewItemViewModel.swift
-│   └─ ProfileViewModel.swift
-│   └─ RegisterViewModel.swift
+│   ├─ RegisterViewModel.swift
+│   ├─ MainViewModel.swift
+│   ├─ ProfileViewModel.swift
+│   ├─ NewItemViewModel.swift
+│   ├─ ToDoListViewModel.swift
 │   └─ ToDoListItemViewModel.swift
-│   └─ ToDoListViewModel.swift
+│
 ├─ Views/
-│   ├─ HeaderView.swift
 │   ├─ LoginView.swift
-│   └─ MainView.swift
-│   ├─ NewItemView.swift
-│   └─ ProfileView.swift
 │   ├─ RegisterView.swift
-│   └─ TLButton.swift
+│   ├─ MainView.swift
+│   ├─ ProfileView.swift
+│   ├─ NewItemView.swift
+│   ├─ TodoListView.swift
 │   ├─ TodoListItemView.swift
-│   └─ TodoListView.swift
+│   ├─ HeaderView.swift
+│   └─ TLButton.swift
+│
 └─ App.swift
 
 A simple to do app that follows MVVM-architecture with: 
