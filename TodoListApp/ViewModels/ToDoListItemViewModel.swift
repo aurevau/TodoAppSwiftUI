@@ -10,4 +10,8 @@ import Combine
 
 class ToDoListItemViewModel: ObservableObject {
     init() {}
+    
+    func toggleIsDone(item: ToDoListItem) {
+        
+    }
 }

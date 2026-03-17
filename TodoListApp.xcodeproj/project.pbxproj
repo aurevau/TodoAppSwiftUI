@@ -42,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				EB5EFB412F6819D600E97F12 /* TodoListApp */,
+				EB5EFC8B2F69966500E97F12 /* Frameworks */,
 				EB5EFB402F6819D600E97F12 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +53,13 @@
 				EB5EFB3F2F6819D600E97F12 /* TodoListApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EB5EFC8B2F69966500E97F12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
