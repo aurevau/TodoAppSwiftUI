@@ -34,7 +34,7 @@ struct TodoListView: View {
 
                         } label: {
                             Text("Delete")
-                        }.tint(Color.red)
+                        }.tint(.secondary)
                     }}
             }.listStyle(PlainListStyle())
             .navigationTitle("Todo List")

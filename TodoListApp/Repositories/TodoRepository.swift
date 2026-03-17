@@ -36,4 +36,17 @@ class TodoRepository {
             .delete()
     }
     
+    func updateToggledTodo(itemCopy: ToDoListItem) async throws {
+        guard let uId = Auth.auth().currentUser?.uid else { return
+        }
+        
+        try await db.collection("users")
+            .document(uId)
+            .collection("todos")
+            .document(itemCopy.id)
+            .setData(itemCopy.asDictionary())
+        
+        
+    }
+    
 }

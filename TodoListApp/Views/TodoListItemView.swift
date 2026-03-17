@@ -28,11 +28,13 @@ struct TodoListItemView: View {
                 viewModel.toggleIsDone(item: item)
             } label: {
                 Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(Color.pink)
                     .padding(.trailing, 20)
             
             }
 
-        }
+        }.padding(10)
+        
     }
 }
 
