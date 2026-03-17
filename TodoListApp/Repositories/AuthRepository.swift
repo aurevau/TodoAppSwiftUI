@@ -21,4 +21,8 @@ class AuthRepository {
         try await Auth.auth().createUser(withEmail: email, password: password)
     }
     
+    func logOut()throws {
+        try Auth.auth().signOut()
+    }
+    
 }
