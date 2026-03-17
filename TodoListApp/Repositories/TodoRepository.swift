@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 
 class TodoRepository {
+    let db = Firestore.firestore()
+
     
     func saveTodoToFirestore(title: String, dueDate: TimeInterval, createdDate: TimeInterval) async throws {
         guard let uId = Auth.auth().currentUser?.uid else { return }
@@ -18,13 +20,20 @@ class TodoRepository {
         let newId = UUID().uuidString
         let newItem = ToDoListItem(id: newId, title: title, dueDate: dueDate, createdDate: createdDate, isDone: false)
         
-        let db = Firestore.firestore()
         
         try await db.collection("users")
             .document(uId)
             .collection("todos")
             .document(newId)
             .setData(newItem.asDictionary())
+    }
+    
+    func deleteTodoFromFirebase(id: String, userId: String) async throws {
+        try await db.collection("users")
+            .document(userId)
+            .collection("todos")
+            .document(id)
+            .delete()
     }
     
 }
